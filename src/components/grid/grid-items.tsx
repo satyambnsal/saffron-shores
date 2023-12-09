@@ -1,6 +1,8 @@
 import { Resort } from "@/types";
-import { GridTileImage } from "components/grid/tile";
+import { GridTileImage } from "@/components/grid/tile";
 import Link from "next/link";
+import { CURRENCY_CODE } from "@/app/data";
+import { resorts } from "@/app/data";
 
 function ThreeItemGridItem({
   item,
@@ -21,10 +23,10 @@ function ThreeItemGridItem({
     >
       <Link
         className="relative block aspect-square h-full w-full"
-        href={`/product/${item.handle}`}
+        href={`/product/${item.name}`}
       >
         <GridTileImage
-          src={item.featuredImage.url}
+          src={item.image_url}
           fill
           sizes={
             size === "full"
@@ -32,12 +34,13 @@ function ThreeItemGridItem({
               : "(min-width: 768px) 33vw, 100vw"
           }
           priority={priority}
-          alt={item.title}
+          alt={item.name}
           label={{
             position: size === "full" ? "center" : "bottom",
-            title: item.title as string,
-            amount: item.priceRange.maxVariantPrice.amount,
-            currencyCode: item.priceRange.maxVariantPrice.currencyCode,
+            title: item.name,
+            amount: item.rooms[0].price,
+            currencyCode: CURRENCY_CODE,
+            description: item.description,
           }}
         />
       </Link>
@@ -45,12 +48,8 @@ function ThreeItemGridItem({
   );
 }
 
-export async function ThreeItemGrid() {
-  // Collections that start with `hidden-*` are hidden from the search page.
-  const homepageItems = await getCollectionProducts({
-    collection: "hidden-homepage-featured-items",
-  });
-
+export function ThreeItemGrid() {
+  const homepageItems = resorts;
   if (!homepageItems[0] || !homepageItems[1] || !homepageItems[2]) return null;
 
   const [firstProduct, secondProduct, thirdProduct] = homepageItems;

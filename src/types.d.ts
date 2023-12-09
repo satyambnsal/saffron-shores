@@ -2,7 +2,7 @@ export type Room = {
   name: string;
   room_size: string;
   occupancy: number;
-  price: number;
+  price: string;
 };
 
 export type Resort = {
