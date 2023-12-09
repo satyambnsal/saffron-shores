@@ -8,10 +8,12 @@ import { Theme } from "@radix-ui/themes";
 import { Toaster } from "react-hot-toast";
 
 export const metadata = {
-  title: "StarkMask",
-  description: " Private Payments With Starknet",
+  title: "Saffron Shores",
+  description:
+    "Unveil the Magic of Vietnam: Exclusive Discounts for Indian Travelers",
 };
 
+import { AnonAadhaarProvider } from "anon-aadhaar-react";
 export default function RootLayout({
   children,
 }: {
@@ -26,14 +28,13 @@ export default function RootLayout({
       <body>
         <Providers>
           <Theme
-            accentColor="blue"
+            accentColor="plum"
             grayColor="auto"
             panelBackground="solid"
             scaling="100%"
             radius="large"
           >
             <div className="min-h-screen">
-              <Header />
               {children}
               <Toaster />
             </div>
