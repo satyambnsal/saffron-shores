@@ -1,4 +1,3 @@
-export const CURRENCY_CODE = "VND";
 export const resorts = [
   {
     id: 1,
@@ -24,6 +23,23 @@ export const resorts = [
         room_size: "120 sqm",
         occupancy: 6,
         price: "500",
+      },
+    ],
+    maxPrice: "200",
+    minPrice: "50",
+    currencyCode: "VND",
+    images: [
+      {
+        src: "/images/hotel_1.jpeg",
+        altText: "Oceanfront Suite",
+      },
+      {
+        src: "/images/hotel_2.jpeg",
+        altText: "Oceanfront Suite",
+      },
+      {
+        src: "/images/hotel_3.jpeg",
+        altText: "Oceanfront Suite",
       },
     ],
   },
@@ -54,6 +70,23 @@ export const resorts = [
         price: "500",
       },
     ],
+    maxPrice: "200",
+    minPrice: "50",
+    currencyCode: "VND",
+    images: [
+      {
+        src: "/images/hotel_3.jpeg",
+        altText: "Oceanfront Suite",
+      },
+      {
+        src: "/images/hotel_4.jpeg",
+        altText: "Oceanfront Suite",
+      },
+      {
+        src: "/images/hotel_1.jpeg",
+        altText: "Oceanfront Suite",
+      },
+    ],
   },
   {
     id: 3,
@@ -81,6 +114,23 @@ export const resorts = [
         price: "500",
       },
     ],
+    maxPrice: "200",
+    minPrice: "50",
+    currencyCode: "VND",
+    images: [
+      {
+        src: "/images/hotel_2.jpeg",
+        altText: "Oceanfront Suite",
+      },
+      {
+        src: "/images/hotel_3.jpeg",
+        altText: "Oceanfront Suite",
+      },
+      {
+        src: "/images/hotel_1.jpeg",
+        altText: "Oceanfront Suite",
+      },
+    ],
   },
   {
     id: 4,
@@ -106,6 +156,23 @@ export const resorts = [
         room_size: "30 sqm",
         occupancy: 2,
         price: "500",
+      },
+    ],
+    maxPrice: "200",
+    minPrice: "50",
+    currencyCode: "VND",
+    images: [
+      {
+        src: "/images/hotel_1.jpeg",
+        altText: "Oceanfront Suite",
+      },
+      {
+        src: "/images/hotel_2.jpeg",
+        altText: "Oceanfront Suite",
+      },
+      {
+        src: "/images/hotel_3.jpeg",
+        altText: "Oceanfront Suite",
       },
     ],
   },

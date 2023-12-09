@@ -2,33 +2,27 @@ import { Text } from "@radix-ui/themes";
 const supported_features = [
   {
     id: 2,
-    question: "Private Transactions",
+    question: "What is Saffron Shores",
     answer:
-      "Send and receive tokens without exposing your wallet address or the amount sent.",
+      "Saffron Shores is a platform based out of Vietnam. Saffron Shores offers Travel and Hospitality services all over the world",
   },
   {
     id: 3,
-    question: "Zero-knowledge proofs",
-    answer: "Guarantees your identity remains confidential.",
+    question:
+      "Why Indian citizen should pay special attention to the platform ?",
+    answer:
+      "As part of promoting tourism, we are offering exculsive discounts to Indian citizens.",
   },
   {
     id: 4,
-    question: "Advanced anonymity",
+    question: "What details it asks to Verify if I'm a Indian citizen ?",
     answer:
-      "Makes it virtually impossible to trace your transactions back to you",
+      "None At all. I mean really not a single thing. We verify your residential status using an amazing technology called Zero-Knowledge Proof. with ZK and anon-aadhar integration we verify your residential status.",
   },
   {
     id: 5,
-    question: "StarkNet security",
-    answer: "Built on the robust and secure StarkNet blockchain",
-  },
-];
-
-const planned_features = [
-  {
-    id: 1,
-    question: "Stark Proofs",
-    answer: "Generate STARK proofs to validate data",
+    question: "Does it allow me to pay for my booking Via Crypto currency ?",
+    answer: "Yes, It does. You can pay via cryptocurreny on Cello blockchain.",
   },
 ];
 
