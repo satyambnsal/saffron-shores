@@ -6,6 +6,8 @@ import { FAQ } from "@/components/common/FAQ";
 import { AnonAadhaarProvider } from "anon-aadhaar-react";
 import { BookHotel } from "@/components/BookHotel";
 import { Header } from "@/components/Header";
+import { Suspense } from "react";
+import { ThreeItemGrid } from "@/components/grid/grid-items";
 
 /**
  * The accent is the most dominant color in your theme, it is used for primary buttons, links, and other interactive elements.
@@ -20,7 +22,14 @@ export default function Home() {
       <Header />
       <div className="mt-8">
         <Hero />
-        {/* <FAQ /> */}
+        <ThreeItemGrid />
+        <Suspense>
+          <Carousel />
+          <Suspense>
+            <Footer />
+          </Suspense>
+        </Suspense>
+        <FAQ />
         <BookHotel />
       </div>
     </AnonAadhaarProvider>
