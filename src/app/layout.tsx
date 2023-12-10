@@ -3,22 +3,31 @@ import "@radix-ui/themes/styles.css";
 import "./theme-config.css";
 import { Providers } from "../contexts/providers";
 import { fjallaOne, monteserrat } from "../styles/fonts";
-import { Header } from "@/components/Header";
 import { Theme } from "@radix-ui/themes";
 import { Toaster } from "react-hot-toast";
-
-export const metadata = {
-  title: "Saffron Shores",
-  description:
-    "Unveil the Magic of Vietnam: Exclusive Discounts for Indian Travelers",
-};
-
 import { AnonAadhaarProvider } from "anon-aadhaar-react";
+import { Header } from "@/components/Header";
+import { Suspense, useEffect, useState } from "react";
+import Footer from "@/components/footer";
+
+// export const metadata = {
+//   title: "Saffron Shores",
+//   description:
+//     "Unveil the Magic of Vietnam: Exclusive Discounts for Indian Travelers",
+// };
+
+const app_id = process.env.NEXT_PUBLIC_APP_ID || "";
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    setReady(true);
+  }, []);
+
   return (
     <html
       lang="en"
@@ -35,8 +44,18 @@ export default function RootLayout({
             radius="large"
           >
             <div className="min-h-screen">
-              {children}
-              <Toaster />
+              {ready ? (
+                <AnonAadhaarProvider _appId={app_id}>
+                  <div>
+                    <Header />
+                    {children}
+                    <Suspense>
+                      <Footer />
+                    </Suspense>
+                  </div>
+                  <Toaster />
+                </AnonAadhaarProvider>
+              ) : null}
             </div>
           </Theme>
         </Providers>

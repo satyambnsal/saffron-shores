@@ -1,7 +1,6 @@
 import { Resort } from "@/types";
 import { GridTileImage } from "@/components/grid/tile";
 import Link from "next/link";
-import { CURRENCY_CODE } from "@/app/data";
 import { resorts } from "@/app/data";
 
 function ThreeItemGridItem({
@@ -23,7 +22,7 @@ function ThreeItemGridItem({
     >
       <Link
         className="relative block aspect-square h-full w-full"
-        href={`/product/${item.name}`}
+        href={`/resorts/${item.id}`}
       >
         <GridTileImage
           src={item.image_url}
@@ -39,7 +38,7 @@ function ThreeItemGridItem({
             position: size === "full" ? "center" : "bottom",
             title: item.name,
             amount: item.rooms[0].price,
-            currencyCode: CURRENCY_CODE,
+            currencyCode: item.currencyCode,
             description: item.description,
           }}
         />

@@ -2,19 +2,10 @@
 import { Box, Badge, Container, Link, Heading } from "@radix-ui/themes";
 import { ThemeToggle } from "./common/ThemeToggle";
 
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { LogInWithAnonAadhaar, useAnonAadhaar } from "anon-aadhaar-react";
-import { useEffect } from "react";
-
-const GITHUB_CONTRACTS_URL = "https://github.com/ethin-23/backend";
 
 export const Header = () => {
   const [anonAadhaar] = useAnonAadhaar();
-  useEffect(() => {
-    if (anonAadhaar.status === "logged-in") {
-      console.log(anonAadhaar.pcd);
-    }
-  }, [anonAadhaar]);
 
   return (
     <Container>

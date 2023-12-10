@@ -1,3 +1,4 @@
+"use client";
 // import Image from "next/image";
 
 import { Button, Container, Flex, Heading, Link, Text } from "@radix-ui/themes";
